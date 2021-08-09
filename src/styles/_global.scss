@@ -1,0 +1,21 @@
+@use "variables";
+
+body {
+  margin: 0;
+  background-color: variables.$bg;
+  color: var(--text);
+}
+
+main {
+  h1 {
+    font-size: 2.9rem;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-size: 1.5rem;
+}
