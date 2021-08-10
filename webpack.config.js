@@ -2,7 +2,7 @@ const path = require("path");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 let mode = "development";
 let target = "web";
@@ -18,9 +18,13 @@ const plugins = [
 if (process.env.NODE_ENV === "production") {
     mode = "production";
     target = "browserslist";
-} else {
-    plugins.push(new ReactRefreshWebpackPlugin())
 }
+if (process.env.SERVE) {
+    // We only want React Hot Reloading in serve mode
+    plugins.push(new ReactRefreshWebpackPlugin());
+}
+
+
 module.exports = {
     mode: mode,
     target: target,
