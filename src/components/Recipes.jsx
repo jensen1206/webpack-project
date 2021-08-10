@@ -14,8 +14,6 @@ const elvenGauntletsRecipe = {
 console.log(elvenShieldRecipe);
 console.log(elvenGauntletsRecipe);
 
-
-
 const Recipes = () => {
     const [recipe, setRecipe] = useState(elvenShieldRecipe);
 
@@ -26,7 +24,6 @@ const Recipes = () => {
             <button onClick={() => setRecipe(elvenGauntletsRecipe)}>
                 Elven Gauntlets
             </button>
-
             <ul>
                 {Object.keys(recipe).map((material) => (
                     <li key={material}>
